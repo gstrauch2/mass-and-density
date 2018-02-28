@@ -33,12 +33,13 @@ int main() {
     outputFile.open(strOutputFileName);
     outputFile << setprecision(2);
     outputFile << fixed;
-    outputFile << "mass: " << dblMass << " g" << endl
-               << "density: " << dblDensity << " g/cm^3" << endl
+    outputFile << "mass: " << dblMass << " kg" << endl
+               << "density: " << dblDensity << " kg/cm^3" << endl
                << "volume: " << dblVolume << " cm^3";
 
     outputFile.close();
 
-
+    cout << "writen to output.txt";
+    
     return 0;
 }
