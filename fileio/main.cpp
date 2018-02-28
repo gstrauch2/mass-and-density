@@ -11,9 +11,9 @@ using namespace std;
 
 int main() {
 
-    double dblMassKg = 0;    //mass in kg
-    double dblVolumeCm3 = 0; //volume in cm^3
-    double dblDensityKgCm3 = 0;  //density in kg/cm^3
+    double dblMass = 0;    //mass in g
+    double dblVolume = 0; //volume in cm^3
+    double dblDensity = 0;  //density in g/cm^3
 
     string strInputFileName = "input.txt";
     string strOutputFileName = "output.txt";
@@ -21,21 +21,21 @@ int main() {
     ifstream inputFile;
 
     inputFile.open(strInputFileName);
-    inputFile >> dblMassKg;
-    inputFile >> dblDensityKgCm3;
+    inputFile >> dblMass;
+    inputFile >> dblDensity;
 
     inputFile.close();
 
     //density = mass / volume; so volume = mass / density
 
-    dblVolumeCm3 = dblMassKg / dblDensityKgCm3;
+    dblVolume = dblMass / dblDensity;
 
     outputFile.open(strOutputFileName);
     outputFile << setprecision(2);
     outputFile << fixed;
-    outputFile << "mass: " << dblMassKg << " kg" << endl
-               << "density: " << dblDensityKgCm3 << " kg/cm^3" << endl
-               << "volume: " << dblVolumeCm3 << " cm^3";
+    outputFile << "mass: " << dblMass << " kg" << endl
+               << "density: " << dblDensity << " kg/cm^3" << endl
+               << "volume: " << dblVolume << " cm^3";
 
     outputFile.close();
 
